@@ -1,7 +1,7 @@
 //variabel untuk mengatur canvas
-var tileSize = 40;
-var rows = 15;
-var columns = 30;
+var tileSize = 50;
+var rows = 10;
+var columns = 15;
 var canvas;
 var canvasWidth = tileSize * columns;
 var canvasHeight = tileSize * rows;
@@ -29,33 +29,33 @@ window.onload = function(){
         };
 
     //variabel plane
-        var planeWidth = 120;
-        var planeHeight = 120;
+        var planeWidth = 60;
+        var planeHeight = 60;
         var planeImg = new Image();
         planeImg.src = "./zimage-Plane.png";
 
     //variabel Peluru
         var PeluruArray = []; 
-        var peluruWidth = 6;
+        var peluruWidth = 4;
         var peluruHeight = 10;
         var peluruSpeed = 10;
   
     //variabel alien
         var alienArray = []; 
-        var alienWidth =80;
-        var alienHeight = 70;
+        var alienWidth =50;
+        var alienHeight = 40;
         var alienImg = new Image();
         alienImg.src = "./zimage-Ufo.png"
     
     //variabel healty box
         var healthBoxArray = []; 
-        var healthBox_Width = 80;
-        var healthBox_Height = 80;
+        var healthBox_Width = 50;
+        var healthBox_Height = 50;
         var healthBoxImg = new Image();
         healthBoxImg.src = "./zimage-Healtbox.png";
     
     // membuat dan menampilkan plane
-        var plane = new Plane (mouse.x, mouse.y, planeWidth, planeHeight);
+        var plane = new Plane (canvasWidth / 2, canvasHeight - planeHeight / 2 - 2, planeWidth, planeHeight);
         function Plane(x, y, width, height){
             this.x = x;
             this.y = y;
@@ -190,10 +190,11 @@ window.onload = function(){
                 shoot();
             }
         }
+
+    //fungsu untuk mengatur NAVIGASI GAME
         function keyUpHandler(e){
             if(e.key == "ArrowRight"){
                 keyRightPressed = false;
-
             }
             else if(e.key == "ArrowLeft"){
                 keyLeftPressed = false;
@@ -202,43 +203,32 @@ window.onload = function(){
                 spacePressed = false;
             }
         }
-
+    
+    //mendeteksi adanya tabrakan antara alien, healtbox dan peluru
         function collision(a,b){
             return a.x < b.x + b.width &&
                 a.x + a.width > b.x &&
                 a.y < b.y + b.height &&
                 a.y + a.height > b.y;
         }
-        c.font = "1em Arial";
     
-        //mencegah default error
+    //mencegah default error
         function stoperror() {
             return true;
         }  
         window.onerror = stoperror;
 
+    //fungsi untuk mengatur POP UP GAME OVER.
         function showGameOver(){
-            // c.clearRect(0, 0, canvas.width, canvas.height);
-            // c.font = "48px Arial";
-            // c.fillStyle = "black";
-            // c.textAlign = "center";
-            // c.fillText ("Game Over!", canvasWidth / 2, canvasHeight / 2);
-            // c.font = "24px Arial";
-            // c.fillText ("Score: " + score, canvasWidth/2, canvasHeight/2 + 50);
-            // Show the gameOverPopup when the game ends
             gameOverPopup.style.display = "block";
-            // Display the score in the popup
             scoreDisplay.innerText = "Score: " + score;
             
         }
-
+        
         function animate(){
             requestAnimationFrame(animate); 
             c.beginPath(); 
             c.clearRect(0, 0, canvas.width, canvas.height); 
-            c.fillStyle = 'white';
-            c.fillText("Health: " + health, 5, 25); 
-            c.fillText("Score: " + score, canvasWidth - 100, 25); 
 
             if (gameOver) {
                 // Jika permainan berakhir, tampilkan popup "Game Over"
@@ -299,11 +289,16 @@ window.onload = function(){
                     }
                 }
             } 
+            c.font = "1em Arial";
+            c.fillStyle = 'white';
+            c.fillText("Health: " + health, 15, 25);  // mengatur posisi tulisan
+            c.fillText("Score: " + score, canvasWidth - 100, 25); 
     
         }
         if (health <= 0) {
             gameOver = true; // Set gameOver menjadi true ketika permainan berakhir
         }
+
         animate();
     }
     startGame();
