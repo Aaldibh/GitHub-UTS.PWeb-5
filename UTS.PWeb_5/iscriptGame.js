@@ -1,14 +1,14 @@
 //variabel untuk mengatur canvas
-var tileSize = 50;
-var rows = 10;
-var columns = 15;
+var tileSize = 50; //berpengaruh dalam pembesaran atau pengecilan canvas
+var rows = 10; //berpengaruh dalam pembesaran atau pengecilan canvas
+var columns = 15; //berpengaruh dalam pembesaran atau pengecilan canvas
 var canvas;
 var canvasWidth = tileSize * columns;
 var canvasHeight = tileSize * rows;
 var c;
 
 //variabel pendukung
-var gameOver = false;
+var gameOver = false; //untuk memunculkan game over
 var score = 0;
 var health = 3;
 
@@ -29,7 +29,7 @@ window.onload = function(){
         };
 
     //variabel plane
-        var planeWidth = 60;
+        var planeWidth = 60; 
         var planeHeight = 60;
         var planeImg = new Image();
         planeImg.src = "./zimage-Plane.png";
