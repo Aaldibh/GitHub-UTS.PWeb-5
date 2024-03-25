@@ -106,11 +106,8 @@ nav a:hover {
     backdrop-filter: blur(1rem);
     border-radius: 5rem;
 }
-<<<<<<< HEAD
 /* Font judul dalam hiasan button */
-=======
 /* Font Judul Guardians Galaxy */
->>>>>>> 3e8743bbdf4401990554e770dc081f693f2972b4
 strong {
     z-index: 2;
     font-family: 'Avalors Personal Use';

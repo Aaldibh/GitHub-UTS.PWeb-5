@@ -24,13 +24,11 @@ window.onload = function(){
 
     function startGame(){
         // mouse = {
-<<<<<<< HEAD
+
         //     x: canvasWidth/2,
         //     y: canvasHeight-50
-=======
             // x: canvasWidth/2,
             // y: canvasHeight-50
->>>>>>> 3e8743bbdf4401990554e770dc081f693f2972b4
         // };
 
     //variabel plane
