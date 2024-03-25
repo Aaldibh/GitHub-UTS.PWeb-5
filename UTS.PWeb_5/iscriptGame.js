@@ -224,6 +224,14 @@ window.onload = function(){
             scoreDisplay.innerText = "Score: " + score;
             
         }
+        function restartGame() {
+            // Sembunyikan popup Game Over
+            var gameOverPopup = document.getElementById("gameOverPopup");
+            gameOverPopup.style.display = "none";
+            
+            // Mulai ulang permainan
+            startGame();
+        }
         
         function animate(){
             requestAnimationFrame(animate); 
