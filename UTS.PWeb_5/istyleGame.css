@@ -222,7 +222,7 @@ strong {
     }
 }
 
-.spinner {
+/* .spinner {
     width: 44px;
     height: 44px;
     animation: spinner-y0fdc1 2s infinite ease;
@@ -284,4 +284,4 @@ strong {
     100% {
       transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
     }
-  }
+  } */
