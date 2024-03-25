@@ -18,15 +18,15 @@ window.onload = function(){
     canvas.height = canvasHeight;
     c = canvas.getContext("2d");
     
-    //variabel game over
+    //variabel menampulkan game over dan socre
     var gameOverPopup = document.getElementById("gameOverPopup");
     var scoreDisplay = document.getElementById("scoreDisplay");
 
     function startGame(){
-        mouse = {
-            x: canvasWidth/2,
-            y: canvasHeight-50
-        };
+        // mouse = {
+            // x: canvasWidth/2,
+            // y: canvasHeight-50
+        // };
 
     //variabel plane
         var planeWidth = 60; 
@@ -54,8 +54,8 @@ window.onload = function(){
         var healthBoxImg = new Image();
         healthBoxImg.src = "./zimage-Healtbox.png";
     
-    // membuat dan menampilkan plane
-        var plane = new Plane (canvasWidth / 2, canvasHeight - planeHeight / 2 - 2, planeWidth, planeHeight);
+    // membuat dan menampilkan dan posisi plane
+        var plane = new Plane (canvasWidth / 2, canvasHeight - planeHeight / 2, planeWidth, planeHeight);
         function Plane(x, y, width, height){
             this.x = x;
             this.y = y;
@@ -64,7 +64,7 @@ window.onload = function(){
   
             this.draw = function(){
                 c.beginPath();
-                c.drawImage(planeImg, this.x - this.width / 2, this.y - this.height/2, this.width, this.height); 
+                c.drawImage(planeImg, this.x - this.width / 2, this.y - this.height/ 2, this.width, this.height); 
             };
   
             this.update = function(){
@@ -130,7 +130,7 @@ window.onload = function(){
             };
         }
     
-    //Menampilkan alien
+    //Menampilkan dam menambahkan dan kecepatan alien
         function drawAliens(){
             for (var i = 0; i < 1; i++){ 
                 var x = Math.random()*(canvasWidth - alienWidth);
@@ -144,7 +144,7 @@ window.onload = function(){
         }
         setInterval(drawAliens, 1200);
   
-    //menampilkan health box
+    //menampilkan dam menambahkan dan kecepatan health box
         function drawHealthBox(){
             for (var j = 0; j < 1; j++){   
                 var x = Math.random()*(canvasWidth - alienWidth);
@@ -191,7 +191,7 @@ window.onload = function(){
             }
         }
 
-    //fungsu untuk mengatur NAVIGASI GAME
+    //fungsi untuk mengatur NAVIGASI GAME saat di tekan
         function keyUpHandler(e){
             if(e.key == "ArrowRight"){
                 keyRightPressed = false;
@@ -244,6 +244,7 @@ window.onload = function(){
                 return; // Hentikan animasi setelah permainan berakhir
             }
 
+            // kecepatan pesawat saat di pencet
             if (keyRightPressed && plane.x < canvas.width - planeWidth / 2) {
                 plane.x += 5; // speed pesawat
             }
