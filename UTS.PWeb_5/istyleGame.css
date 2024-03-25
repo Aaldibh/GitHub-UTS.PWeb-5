@@ -10,7 +10,7 @@ canvas{
     align-items: center;
     margin: 0 auto;
     border: 5px solid rgb(0, 0, 0); /* Memperbaiki penggunaan border */
-    height: 70vh;
+    height: 70;
 }
 
 /* Pengaturan Pada Bagian Body */
@@ -95,6 +95,7 @@ nav a:hover {
     background-origin: border-box;
     background-clip: content-box, border-box;
 }
+/* bintang pada judul */
 #container-stars {
     position: fixed;
     z-index: -1;
@@ -105,7 +106,11 @@ nav a:hover {
     backdrop-filter: blur(1rem);
     border-radius: 5rem;
 }
+<<<<<<< HEAD
 /* Font judul dalam hiasan button */
+=======
+/* Font Judul Guardians Galaxy */
+>>>>>>> 3e8743bbdf4401990554e770dc081f693f2972b4
 strong {
     z-index: 2;
     font-family: 'Avalors Personal Use';
@@ -114,11 +119,13 @@ strong {
     color: #FFFFFF;
     text-shadow: 0 0 4px white;
 }
+/* Warna pada judul */
 #glow {
     position: absolute;
     display: flex;
     width: 12rem;
 } 
+/* Ukuran warna di belakang judul*/
 .circle {
     width: 100%;
     height: 30px;
@@ -126,12 +133,14 @@ strong {
     animation: pulse_3011 4s infinite;
     z-index: -1;
 } 
+/* warna lingkaran di tengah judul */
 .circle:nth-of-type(1) {
     background: rgba(254, 83, 186, 0.636);
 } 
 .circle:nth-of-type(2) {
     background: rgba(142, 81, 234, 0.704);
 } 
+/* Warna button saat di sentuh */
 .btn:hover #container-stars {
     z-index: 1;
     background-color: #212121;
