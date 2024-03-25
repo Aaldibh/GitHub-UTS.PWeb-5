@@ -23,10 +23,10 @@ window.onload = function(){
     var scoreDisplay = document.getElementById("scoreDisplay");
 
     function startGame(){
-        mouse = {
-            x: canvasWidth/2,
-            y: canvasHeight-50
-        };
+        // mouse = {
+        //     x: canvasWidth/2,
+        //     y: canvasHeight-50
+        // };
 
     //variabel plane
         var planeWidth = 60; 

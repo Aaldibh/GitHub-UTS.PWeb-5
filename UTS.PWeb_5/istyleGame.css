@@ -105,6 +105,7 @@ nav a:hover {
     backdrop-filter: blur(1rem);
     border-radius: 5rem;
 }
+/* Font judul dalam hiasan button */
 strong {
     z-index: 2;
     font-family: 'Avalors Personal Use';
